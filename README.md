@@ -2,7 +2,7 @@
 
 Simple converter to convert an CSV file into a validated XML File. The CSV has a specific format which allows to describe arbitrary nested XML files.
 
-While this is a general purpose tool it was created to support the creation of OECD XML tax reports from Excel files.
+While this is a general purpose tool it was created to support the creation of OECD XML tax reports from MS Excel files.
 
 ## Prerequisite
 
@@ -27,3 +27,6 @@ The CSV input file must have exactly 6 columns with the toe following content:
 | 4      | Node type `Element` or `Attribute` |
 | 5      | Name of this node |
 | 6      | Text content the element or value of an attribute |
+
+
+If the CSV file is exported from MS Excel select the format "CSV UTF-8". If you export the file with VBA use the constant `xlCSVUTF8` to specify the format.
