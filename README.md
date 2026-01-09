@@ -1,10 +1,10 @@
 # CSV to XML Converter
 
-Simple converter to convert an CSV file into a validated XML File. The CSV has a specific format which allows to describe arbitrary nested XML files.
+Simple converter to convert a CSV file into a validated XML File. The CSV has a specific format which allows to describe arbitrary nested XML files.
 
 While this is a general purpose tool it was created to support the creation of OECD XML tax reports from MS Excel files.
 
-## Prerequisite
+## Prerequisites
 
 1. Install Java 25, for example [Eclipse Temurin](https://adoptium.net/temurin/releases/?version=25)
 2. Download [`CSV2XML.java`](src/main/java/CSV2XML.java)
@@ -17,7 +17,7 @@ The tool requires 3 parameters:
 
 ## CSV File Format
 
-The CSV input file must have exactly 6 columns with the toe following content:
+The CSV input file must have exactly 6 columns with the following content:
 
 | Column | Description |
 | ------ | ----------- |
@@ -30,3 +30,9 @@ The CSV input file must have exactly 6 columns with the toe following content:
 
 
 If the CSV file is exported from MS Excel select the format "CSV UTF-8". If you export the file with VBA use the constant `xlCSVUTF8` to specify the format.
+
+Here is an [example input CSV](src/test/resources/testinput.csv) file for this [example schema](src/test/resources/testschema.xsd).
+
+## License
+
+This tool is provided under the [MIT license](LICENSE.md).
