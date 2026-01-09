@@ -27,12 +27,10 @@ import org.w3c.dom.Node;
 public class CSV2XML {
 
 	void main(String... args) throws Exception {
+		run(Path.of(args[0]), Path.of(args[1]), Path.of(args[2]));
+	}
 
-		// Program arguments:
-		var csvfile = Path.of(args[0]);
-		var schemafile = Path.of(args[1]);
-		var outputxml = Path.of(args[2]);
-
+	void run(Path csvfile, Path schemafile, Path outputxml) throws Exception {
 		var document = buildDocument(csvfile);
 		validate(document, schemafile);
 		write(document, outputxml);
@@ -92,7 +90,7 @@ public class CSV2XML {
 	}
 
 	void validate(Document document, Path schemafile) throws Exception {
-		SchemaFactory factory = SchemaFactory.newInstance(XMLConstants.W3C_XML_SCHEMA_NS_URI);
+		var factory = SchemaFactory.newInstance(XMLConstants.W3C_XML_SCHEMA_NS_URI);
 		var schemaFile = new StreamSource(schemafile.toFile());
 		var schema = factory.newSchema(schemaFile);
 		schema.newValidator().validate(new DOMSource(document));
